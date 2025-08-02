@@ -1,0 +1,6 @@
+body, .gradio-container, .gradio-container > div {
+    background: linear-gradient(135deg, #1a4d3a 0%, #2d5a2d 25%, #1e5e42 50%, #0f3d2a 75%, #1a4d3a 100%) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    min-height: 100vh !important;
+}

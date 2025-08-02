@@ -1,0 +1,30 @@
+*.csv
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# Environment files
+.env
+*.env
+
+# Data files (exclude large or sensitive data)
+data/raw/*
+data/processed/*
+
+# Model artifacts (exclude from git, as they can be regenerated)
+models/*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
