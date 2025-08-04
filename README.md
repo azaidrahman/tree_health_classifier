@@ -136,7 +136,10 @@ The Gradio interface will be available at `http://localhost:7860` (or the URL sh
 - "Randomize Features" button for testing
 - Responsive design with custom styling
 
-*Note: Screenshots of the web interface would be included here in a complete submission*
+### Guide to features
+
+<img width="1010" height="1005" alt="image" src="https://github.com/user-attachments/assets/c9ca8eaa-73ee-4b53-b1ef-c6c8ccca2eac" />
+
 
 ## Future Improvements
 
