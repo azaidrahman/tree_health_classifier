@@ -21,18 +21,11 @@ def predict_health(*args):
     # Create a DataFrame with the input values
     input_data = pd.DataFrame([args], columns=selected_features)
     
-    # Make prediction (numerical)
-    prediction = model.predict(input_data)[0]
-    
-    # Convert numerical prediction back to string label
-    predicted_label = label_encoder.inverse_transform([prediction])[0]
-    
     # Get confidence scores
     probabilities = model.predict_proba(input_data)[0]
     confidence = {label: prob for label, prob in zip(label_encoder.classes_, probabilities)}
     
-    # return predicted_label, confidence
-    return predicted_label, confidence
+    return confidence
 
 def randomize_features():
     """
@@ -120,14 +113,13 @@ with gr.Blocks(css=css, title="Tree Health Classifier") as demo:
                 randomize_button = gr.Button("Randomize Features")
         
         with gr.Column():
-            predicted_status = gr.Label(label="Predicted Health Status")
             confidence_scores = gr.Label(label="Confidence Scores")
     
     # Connect button click to prediction function
     predict_button.click(
         fn=predict_health,
         inputs=input_components,
-        outputs=[predicted_status, confidence_scores]
+        outputs=confidence_scores
     )
     
     # Connect each slider to trigger prediction on change
@@ -135,7 +127,7 @@ with gr.Blocks(css=css, title="Tree Health Classifier") as demo:
         component.change(
             fn=predict_health,
             inputs=input_components,
-            outputs=[predicted_status, confidence_scores]
+            outputs=confidence_scores
         )
     
     # Connect randomize button to randomize function and predict
@@ -145,7 +137,7 @@ with gr.Blocks(css=css, title="Tree Health Classifier") as demo:
     ).then(
         fn=predict_health,
         inputs=input_components,
-        outputs=[predicted_status, confidence_scores]
+        outputs=confidence_scores
     )
 
 # Launch the app with live reload
