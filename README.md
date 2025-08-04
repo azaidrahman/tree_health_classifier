@@ -146,11 +146,15 @@ The Gradio interface will be available at `http://localhost:7860` (or the URL sh
 Given more time, I would focus on the following improvements:
 
 **Data**: 
-Bump the 150 samples up to a few thousand, pulling from different seasons, tree species, and lighting conditions. Add basic augmentations like small rotations and brightness shifts, plus simple week-of-year features so the model sees seasonal patterns.
-**Model**: 
-Keep the Random Forest as a fallback, but stack it with XGBoost and a shallow neural net. Grid-search the key knobs (depth, learning rate, dropout) and let the ensemble vote.
 
-**Explain & monitor**: 
-Plug in SHAP to show which bands or indices drive each prediction. Log the live accuracy, fire an alert if it drifts more than 5 %, and give users a thumbs-up / thumbs-down to feed corrections back into the next retrain.
+- Bump the 150 samples up to a few thousand, pulling from different seasons, tree species, and lighting conditions. Add basic augmentations like small rotations and brightness shifts, plus simple week-of-year features so the model sees seasonal patterns.
+
+**Model**:
+  
+- Keep the Random Forest as a fallback, but stack it with XGBoost and a shallow neural net. Grid-search the key knobs (depth, learning rate, dropout) and let the ensemble vote.
+
+**Explain & monitor**:
+
+- Plug in SHAP to show which bands or indices drive each prediction. Log the live accuracy, fire an alert if it drifts more than 5 %, and give users a thumbs-up / thumbs-down to feed corrections back into the next retrain.
 
 **Dataset Source**: [Plant Health Data - Kaggle](https://www.kaggle.com/datasets/ziya07/plant-health-data?resource=download)
