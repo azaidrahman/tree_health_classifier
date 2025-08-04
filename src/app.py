@@ -129,6 +129,15 @@ with gr.Blocks(css=css, title="Tree Health Classifier") as demo:
         inputs=input_components,
         outputs=[predicted_status, confidence_scores]
     )
+    
+    # Connect each slider to trigger prediction on change
+    for component in input_components:
+        component.change(
+            fn=predict_health,
+            inputs=input_components,
+            outputs=[predicted_status, confidence_scores]
+        )
+    
     # Connect randomize button to randomize function and predict
     randomize_button.click(
         fn=randomize_features,
@@ -139,5 +148,5 @@ with gr.Blocks(css=css, title="Tree Health Classifier") as demo:
         outputs=[predicted_status, confidence_scores]
     )
 
-# Launch the app
-demo.launch()
+# Launch the app with live reload
+demo.launch(inbrowser=True, show_error=True)
