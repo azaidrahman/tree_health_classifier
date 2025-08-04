@@ -1,5 +1,8 @@
 # Tree Health Classifier
 
+<img width="1023" height="561" alt="image" src="https://github.com/user-attachments/assets/77f35b01-f584-4713-be93-0b83cb176291" />
+
+
 An end-to-end machine learning pipeline that classifies tree health status (healthy, diseased, dead) using sensor data. This project demonstrates the complete AI development lifecycle from data processing to model deployment with a web interface.
 
 ## Setup and Run Instructions
