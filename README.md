@@ -80,8 +80,8 @@ The Gradio interface will be available at `http://localhost:7860` (or the URL sh
 ### Dataset
 - **Source**: Kaggle Plant Health Dataset (https://www.kaggle.com/datasets/ziya07/plant-health-data)
 - **Training Data**: Random subset of 150 samples (reproducible with random_state=13)
-- **Features**: Sensor data including soil pH, moisture, temperature, humidity, light intensity, electrochemical signals, and nutrient levels
-- **Target Classes**: 3 classes - Healthy, Diseased, Dead
+- **Features**: Sensor data including soil pH, moisture, temperature, humidity, light intensity, electrochemical signals, and nutrient levels (Nitrogen, phosphorus, potassium)
+- **Target Classes**: 3 classes - Healthy, Moderate Stress, High Stress
 
 ### Model Architecture
 
